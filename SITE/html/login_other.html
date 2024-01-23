@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+      <meta charset="UTF-8">
+      <title>[PC] Gestion Habillement Vendée</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="..\static\styles.css">
+<header>
+    <nav>
+        <div class="logo">
+            <ul>
+                <a href="main.html"><img style="float: left;" src="..\static\logo_carre_transparent_1.png" alt="Logo de l'association"></a>
+                <li id="boutons_accueil" style="float: left;"><a href="#accueil">Accueil</a></li>
+                <li id="boutons_accueil" style="float: left;"><a href="#apropos" >À propos</a></li>
+                <li id="boutons_accueil" style="float: left;"><a href="#services">Services</a></li>
+                <li id="boutons_accueil" style="float: left;"><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+</head>
+
+<form action="authentification.php" method="post">
+    <div class="imgcontainer">
+      <img src="..\static\logo_carre_transparent_1.png" alt="Avatar" class="avatar">
+    </div>
+  
+    <div class="container">
+      <label for="uname"><b>Nom d'utilisateur</b></label>
+      <input type="text" placeholder="Entrez votre nom d'utilisateur" name="uname" required>
+  
+      <label for="psw"><b>Mot de passe</b></label>
+      <input type="password" placeholder="Entrez votre mot de passe" name="psw" required>
+  
+      <button type="submit">Connexion</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Se rappeler de moi
+      </label>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn">Cancel</button>
+      <span class="psw"><a href="#">Mot de passe oublié ?</a></span>
+    </div>
+  </form>
+  
+
+<footer>
+    <p id="copyright">&copy;  Protections Civile Secteur Vendée</p>
+</footer>
+</html>
