@@ -15,8 +15,6 @@ Il est aujourd'hui plus compliqué pour une antenne de réussir à bien gérer l
 ![Screenshot du formulaire de contact](SITE/data/images/screenshots/preview_contact_form.png)
 ![Screenshot des cartes de contact](SITE/data/images/screenshots/preview_contact_cards.png)
 
-# COUCOU NANA ( SAUF QUE JAIME PAS CE SURNOM DE MERDE )
-
 ## Langages utilisés :
 
  - HTML
