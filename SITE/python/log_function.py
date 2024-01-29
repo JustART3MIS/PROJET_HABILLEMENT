@@ -74,7 +74,9 @@ def log_action(IdAntenne: int, IdUser : int, action : str):
     # Requête SQL finale
     cur.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{actionTime}", {IdUser}, "{action}")')
 
+
 # Exécution des modifications apportées à la database
 db.commit()
+
 # Fermeture de la connexion avec la database
 db.close()
