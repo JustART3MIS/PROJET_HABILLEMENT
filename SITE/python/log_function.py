@@ -64,18 +64,15 @@ def log_action(IdAntenne: int, IdUser : int, action : str):
     date = today.strftime("%d/%m/%Y")
 
     # Récupération de l'heure de l'action
-    nowTime = datetime.now()
-    heure, min, sec = nowTime.hour, nowTime.minute, nowTime.second
-    nowTime = f"{heure}:{min}:{sec}"
+    heure, min, sec = today.hour, today.minute, today.second
+    actionTime = f"{heure}:{min}:{sec}"
 
     # Récupération du nombre de lignes déja incrites dans les logs pour la requête SQL finale
     cur.execute(f"SELECT COUNT(*) FROM logs_{IdAntenne}")
     entryId = cur.fetchone()[0] + 1
 
     # Requête SQL finale
-    cur.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{nowTime}", {IdUser}, "{action}")')
-
-log_action("MTGU85", 131207, "Created Automatic Logs CODE")
+    cur.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{actionTime}", {IdUser}, "{action}")')
 
 # Exécution des modifications apportées à la database
 db.commit()
