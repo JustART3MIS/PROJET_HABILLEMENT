@@ -36,49 +36,17 @@
 #################  IMPORTS  ################### 
 ###############################################
 
-from datetime import datetime
 import sqlite3 as sql
 
-###############################################
+
+###############################################s
 ##############  DB CONNEXION  ################# 
 ###############################################
 
-db_logs = sql.connect("data\databases\logs.db_logs")
-cur_logs = db_logs.cursor()
+db = sql.connect("data\databases\logs.db")
+cur = db.cursor()
 
-################################################
-################  FUNCTIONS  ################### 
-################################################
+###############################################
+################  FUNCTION  ################### 
+###############################################
 
-def log_action(IdAntenne: int, IdUser : int, action : str):
-    """Ajoute une nouvelle entrée à la table des logs de la database 
-
-    Args:
-        IdAntenne (int): Identifiant représentant l'antenne dont provient l'action (Ex: Montaigu -> MTGU85 )
-        IdUser (int): Identifiant représentant le compte utilisé pour l'action
-        action (str): Action effectuée par l'utilisateur
-    """
-
-    # Récupération de la date pour la requête SQL finale
-    today = datetime.now()
-    date = today.strftime("%d/%m/%Y")
-
-    # Récupération de l'heure de l'action
-    heure, min, sec = today.hour, today.minute, today.second
-    actionTime = f"{heure}:{min}:{sec}"
-
-    # Récupération du nombre de lignes déja incrites dans les logs pour la requête SQL finale
-    cur_logs.execute(f"SELECT COUNT(*) FROM logs_{IdAntenne}")
-    # Requête SQL finale
-    cur_logs.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{actionTime}", {IdUser}, "{action}")')
-
-    # Exécution des modifications apportées à la database
-    db_logs.commit()
-
-
-#####################################################
-##############  CLOSE DB CONNEXION  ################# 
-#####################################################
-
-# Fermeture de la connexion avec la database
-db_logs.close()
