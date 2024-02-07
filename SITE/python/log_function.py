@@ -70,7 +70,7 @@ def log_action(IdAntenne: int, IdUser : int, action : str):
     # Récupération du nombre de lignes déja incrites dans les logs pour la requête SQL finale
     cur_logs.execute(f"SELECT COUNT(*) FROM logs_{IdAntenne}")
     # Requête SQL finale
-    cur_logs.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{actionTime}", {IdUser}, "{action}")')
+    cur_logs.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({cur_logs.fetchone()[0]}, "{date}", "{actionTime}", {IdUser}, "{action}")')
 
     # Exécution des modifications apportées à la database
     db_logs.commit()
