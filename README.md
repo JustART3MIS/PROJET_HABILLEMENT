@@ -8,7 +8,9 @@ Il est aujourd'hui plus compliqué pour une antenne de réussir à bien gérer l
 ## Contenu du projet :
 ### - Partie Utilisateur :
 * Site internet protégé par 2 identifiants par antenne (Identifiant d'antenne + identifiant du responsable de la commission habillement)
-![Screenshot du menu de connexion](SITE/data/images/screenshots/preview_login_other.png)
+![Screenshot du menu de connexion alternatif](SITE/data/images/screenshots/preview_login_other.png)
+<ins>**OU**</ins>
+![Screenshot du menu de connexion](SITE/data/images/screenshots/preview_login.png)
 * Simple scan avec un lecteur lors d'un emprunt / d'un lavage
 [INTEGRER SCREENSHOT]
 * Contact simple avec un formulaire ou un contact direct avec les responsables du projet

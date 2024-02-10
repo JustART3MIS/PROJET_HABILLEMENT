@@ -39,16 +39,16 @@
 from datetime import datetime
 import sqlite3 as sql
 
-###############################################s
+###############################################
 ##############  DB CONNEXION  ################# 
 ###############################################
 
-db = sql.connect("data\databases\logs.db")
-cur = db.cursor()
+db_logs = sql.connect("data\databases\logs.db_logs")
+cur_logs = db_logs.cursor()
 
-###############################################
-################  FUNCTION  ################### 
-###############################################
+################################################
+################  FUNCTIONS  ################### 
+################################################
 
 def log_action(IdAntenne: int, IdUser : int, action : str):
     """Ajoute une nouvelle entrée à la table des logs de la database 
@@ -68,15 +68,17 @@ def log_action(IdAntenne: int, IdUser : int, action : str):
     actionTime = f"{heure}:{min}:{sec}"
 
     # Récupération du nombre de lignes déja incrites dans les logs pour la requête SQL finale
-    cur.execute(f"SELECT COUNT(*) FROM logs_{IdAntenne}")
-    entryId = cur.fetchone()[0] + 1
-
+    cur_logs.execute(f"SELECT COUNT(*) FROM logs_{IdAntenne}")
     # Requête SQL finale
-    cur.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({entryId}, "{date}", "{actionTime}", {IdUser}, "{action}")')
+    cur_logs.execute(f'INSERT INTO logs_{IdAntenne} VALUES ({cur_logs.fetchone()[0]}, "{date}", "{actionTime}", {IdUser}, "{action}")')
+
+    # Exécution des modifications apportées à la database
+    db_logs.commit()
 
 
-# Exécution des modifications apportées à la database
-db.commit()
+#####################################################
+##############  CLOSE DB CONNEXION  ################# 
+#####################################################
 
 # Fermeture de la connexion avec la database
-db.close()
+db_logs.close()
