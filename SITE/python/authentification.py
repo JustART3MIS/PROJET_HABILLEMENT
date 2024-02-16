@@ -28,8 +28,7 @@ class CustomUserManager(BaseUserManager):
 
         Entrées:
             username (str): Le nom d'utilisateur du superutilisateur à créer.
-            password (str): Le mot de passe du superutilisateur à créer.
-            **extra_fields (dict): Des champs supplémentaires à ajouter au superutilisateur.
+            password (str): Le mot de passe du superutilisateur à créer.*
 
         Sortie:
             user (CustomUser): Le superutilisateur créé.
