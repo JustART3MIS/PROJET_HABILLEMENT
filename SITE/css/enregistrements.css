@@ -1,0 +1,65 @@
+form {
+  /* On centre le formulaire */
+  margin: 0 auto;
+  width: 80%;
+  /* Le contour du formulaire */
+  padding: 1em;
+  border: 1px solid #f58a1f;
+  border-radius: 1em;
+}
+
+ul {
+  /* Enlever les points de la liste */
+  list-style: none;
+}
+
+form li + li {
+  /* Espacement des elements de liste */
+  margin-top: 2em;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  /* Même police par défaut pour les champs de texte */
+  font: 1em sans-serif;
+
+  /* Taille uniforme pour les champs */
+  box-sizing: border-box;
+
+  /* Même bordure que pour le formulaire */
+  border: 1px solid #999;
+}
+
+#nombre{
+  width: 50px;
+  text-align: center;
+}
+
+/* Afficher toujours le spin-button pour l'input de type nombre */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  opacity: 1;
+}
+
+textarea {
+  /* Alignement du texte sur plusieurs lignes avec leur libellé. */
+  vertical-align: top;
+
+  /* On fournit un peut d'espace pour saisir du texte. */
+  height: 5em;
+
+  width: 500px;
+
+  /* On permet de redimensionner verticalement. */
+  resize: vertical;
+}
+
+
+button {
+  /* Espacement avec le texte au-dessus */
+  margin-top: 2em;
+}
