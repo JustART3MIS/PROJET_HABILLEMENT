@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+      <meta charset="UTF-8">
+      <title>[PC] Gestion Habillement Vendée</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="..\css\styles.css">
+      <link rel="stylesheet" href="..\css\enregistrements.css">
+<header style="position: relative;">
+    <nav>
+        <div class="logo">
+            <ul>
+                <a href="login.html"><img src="..\data\images\logos\logo_carre_transparent_1.png" alt="Logo de l'association"></a>
+                <h1 id="titre_login"> ENREGISTREMENT HABILLEMENT - PROTECTION CIVILE SECTEUR VENDEE</h1>
+            </ul>
+        </div>
+    </nav>
+</header>
+</head>
+
+<body>
+    <h1 style="margin-left: 0.5%; padding: 20px;">Enregistrer un vêtement</h1>
+    <form action="enregistrement" method="post">
+        <ul>
+          <li>
+            <label for="identifiant">Identifiant&nbsp;du&nbsp;Vêtement&nbsp;:</label>
+            <input id="identifiant" name="identifiant" type="text" placeholder="Entrez l'identifiant" />
+          </li>
+          <li>
+            <label for="nombre">Quantité&nbsp;:</label>
+            <input id="nombre" type="number" value="1" min="0" ></input>
+          </li>
+          <li>
+            <label id="type">Type&nbsp;:</label>
+            <select id="type" name="type">
+              <option value="null" disabled="yes" selected="yes">Sélectionnez une option</option>
+              <option value="1">Badges</option>
+              <option value="2">Bandes de fonction</option>
+              <option value="3">Casquettes</option>
+              <option value="4">Ceintures</option>
+              <option value="5">Chaussures</option>
+              <option value="6">Divers</option>
+              <option value="7">Ecussons de manches</option>
+              <option value="8">Gilet Haute visibilité</option>
+              <option value="9">Pantalons</option>
+              <option value="10">Parkas</option>
+              <option value="11">Polaires</option>
+              <option value="12">Polos</option>
+              <option value="13">Softshell</option>
+            </select>
+          </li>
+          <li>
+            <label for="modele">Modèle&nbsp;:</label>
+            <input id="modele" name="modele" type="text" placeholder="Entrez le modèle"/>
+          </li>
+          <li>
+            <label for="serie">N°&nbsp;de&nbsp;série&nbsp;:</label>
+            <input id="serie" name="serie" type="text" placeholder="Entrez le n° de série"/>
+          </li>
+          <li>
+            <label for="statut">Statut&nbsp;:</label>
+            <select id="statut" name="statut">
+              <option value="null" disabled="yes" selected="yes">Sélectionnez une option</option>
+              <option value="1">Opérationnel</option>
+              <option value="2">En réparation</option>
+              <option value="3">Possédé</option>
+              <option value="4">Autre</option>
+            </select>
+          </li>
+          <li>
+            <label for="date">Date&nbsp;limite&nbsp;:</label>
+            <input id="date" name="date" type="date"/>
+          </li>
+          <li>
+            <label for="inventaire">N°&nbsp;d'Inventaire&nbsp;:</label>
+            <input id="inventaire" name="inventaire" type="text" placeholder="Entrez le n° d'inventaire"/>
+          </li>
+          <li>
+            <label for="stockage">Lieu&nbsp;de&nbsp;stockage&nbsp;:</label>
+            <select id="stockage" name="stockage">
+              <option value="null" disabled="yes" selected="yes">Sélectionnez une option</option>
+              <option value="1">Vestiaire</option>
+              <option value="2">Stock</option>
+              <option value="3">Possédé</option>
+              <option value="4">Autre</option>
+            </select>
+          </li>
+          <li>
+            <label for="commentaire">Commentaire&nbsp;:</label>
+            <textarea id="commentaire" name="commentaire" type="text" placeholder="Entrez un commentaire"></textarea>
+          </li>
+          <li>
+            <label for="annee">Année&nbsp;:</label>
+            <select name="annee" id="annee">
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <option value="2002">2002</option>
+              <option value="2003">2003</option>
+              <option value="2004">2004</option>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010">2010</option>
+              <option value="2010">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024" selected="yes">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+          </li>
+          <li>
+            <label for="affectation">Affectation&nbsp;:</label>
+            <select id="affectation" name="affectation">
+              <option value="85MTGU">85 MTGU - Terres de Montaigu</option>
+              <option value="85StEBois">85 St E Bois - Saint Etienne du Bois</option>
+            </select>
+          </li>
+          <div class="button">
+            <button type="submit" style="color: #ffffffff; background-color: #004687;">Envoyer le formulaire</button>
+          </div>
+        </ul>
+        
+      </form>
+</body>
+
+</html>
