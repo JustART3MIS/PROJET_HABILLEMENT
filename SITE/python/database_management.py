@@ -46,29 +46,33 @@ from unidecode import unidecode
     ###############################################
 
 DB_PRINCIPALE = sql.connect("site\data\databases\DB_MAIN.db")
+DB_USERS = sql.connect("site\data\databases\profiles.db")
+
 cur = DB_PRINCIPALE.cursor()
+users = DB_USERS.cursor()
 
     ################################################
     ################  FUNCTIONS  ################### 
     ################################################
 
-def verif_connexion():
+def verif_connexion(db_cursor):
     """Vérifie si la connexion à bien été effectuée en listant les tables de la database
     
     Renvoi :
         str : Listes des tables"""
 
     # Requête pour obtenir les noms de toutes les tables dans la base de données
-    cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    db_cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
 
     # Récupérer les résultats de la requête
-    tables = cur.fetchall()
+    tables = db_cursor.fetchall()
 
     # Afficher les noms des tables
     if tables:
         renvoi = "Tables existantes dans la base de données :"
   
         for table in tables:
+            renvoi += "\n"
             renvoi += str(table[0])
         renvoi += "\n ------------ \n"
     else:
@@ -76,8 +80,20 @@ def verif_connexion():
     
     return renvoi
 
-def add_user():
-    pass
+def add_account(permission_lvl, username, password):
+    if permission_lvl == 1 : # Identifiants d'Antenne
+        users.execute(f"INSERT INTO users(username, pwd_reference) VALUES ({username}, "")")
+
+    elif permission_lvl == 3: # Admins
+        users.execute(f"INSERT INTO admins(username, pwd_reference) VALUES ({username}, {password})")
+
+    elif permission_lvl == 4: # Superadmins
+        users.execute(f"INSERT INTO superadmins(username, pwd_reference) VALUES ({username}, {password})")
+
+def add_referent(nom, prenom, antenne, pwd):
+   users.execute(f'INSERT INTO referents(username, pwd_reference) VALUES ("{nom[0]}.{prenom}_{antenne}", "{pwd}")')
+
+
 
 def change_pwd():
     pass
@@ -144,7 +160,7 @@ def ajouter_vetement(idAntenne:str, type:str, quantite:int = 1, modele:str = Non
                 {defaults['numero_inventaire']}, {defaults['statut']}, {defaults['date_limite']}, {defaults['numero_inventaire']},
                 {defaults['lieu_stockage']}, {defaults['commentaire']}, {defaults['annee']}, {defaults['affectation']})""")
 
-
+print(verif_connexion(users))
 
 # Applique toutes les modifications effectuées à la Database
 DB_PRINCIPALE.commit()
