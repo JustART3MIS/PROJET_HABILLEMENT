@@ -81,6 +81,14 @@ def verif_connexion(db_cursor):
     return renvoi
 
 def add_account(permission_lvl, username, password):
+    """Crée un compte (affectation d'un nom d'utilisateur et mot de passe) dans la base de données selon les permissions attribuées
+
+    Entrées :
+        permission_lvl(int): nombre 1, 2 ou 3 désignant le niveau de permission du compte à créer
+        username(str): nom d'utilisateur
+        password(str): mot de passe de l'utilisateur
+    """
+    
     if permission_lvl == 1 : # Identifiants d'Antenne
         users.execute(f"INSERT INTO users(username, pwd_reference) VALUES ({username}, "")")
 
@@ -95,7 +103,7 @@ def add_referent(nom, prenom, antenne, pwd):
 
 
 
-def change_pwd():
+def change_pwd(username, current_password, old_password):
     pass
 
 def voir_vetements(id_antenne:str, id_vetement:str = None , statut:str = None):
