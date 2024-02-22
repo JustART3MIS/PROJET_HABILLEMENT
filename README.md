@@ -12,7 +12,7 @@ Il est aujourd'hui plus compliqué pour une antenne de réussir à bien gérer l
 <ins>**OU**</ins>
 ![Screenshot du menu de connexion](SITE/data/images/screenshots/preview_login.png)
 * Simple scan avec un lecteur lors d'un emprunt / d'un lavage
-[INTEGRER SCREENSHOT]
+![Screenshot du formulaire d'enregistrement](SITE/data/images/screenshots/preview_register.png)
 * Contact simple avec un formulaire ou un contact direct avec les responsables du projet
 ![Screenshot du formulaire de contact](SITE/data/images/screenshots/preview_contact_form.png)
 ![Screenshot des cartes de contact](SITE/data/images/screenshots/preview_contact_cards.png)
